@@ -1,60 +1,88 @@
-*{
+* {
     margin: 0;
     padding: 0;
-  
 }
-.container{
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
     position: relative;
-    padding: 100px;
-    background-color:  hsl(234, 29%, 20%);
-    margin: 50px 100px 50px;
-    height: 350px;
+    padding: 20px; /* Reduced padding for smaller screens */
+    background-color: hsl(234, 29%, 20%);
 }
-.inbox{
-    margin: 0px 150px 50px;
-  
+
+.inbox {
     border-radius: 20px;
-position: absolute;
     background-color: hsl(0, 0%, 100%);
     display: flex;
     align-items: center;
-    height: 350px;
-    padding-left: 40px;
-
-
+    flex-direction: column; /* Stack elements on small screens */
+    padding: 20px; /* Added padding for better spacing */
 }
-.left{
-    margin-right: 5px;
+
+.left {
+    text-align: center; /* Center text for better appearance */
 }
-li{
+
+ul {
     list-style: none;
+    padding: 0; /* Remove default padding */
 }
-input{
+
+input {
     border: grey solid 1px;
-    padding: 5px 20px 5px 8px;
+    padding: 10px; /* Increased padding for better usability */
     border-radius: 6px;
+    width: calc(100% - 20px); /* Full width minus padding */
 }
-button{
+
+button {
     border-radius: 6px;
     border: grey solid 1px;
-   background-color:  hsl(234, 29%, 20%);
+    background-color: hsl(234, 29%, 20%);
     text-align: center;
-padding: 10px 25px;
-color: white;
-cursor: pointer;
-transition: 1s;
-}
-button:hover{
+    padding: 10px;
+    color: white;
     cursor: pointer;
+    transition: transform .3s ease; /* Smooth transition */
+}
+
+button:hover {
     transform: translateY(-3px);
 }
-img{
-    transition: 1s;
+
+img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
 }
-img:hover{
-    cursor: pointer;
-    transform: translateY(-3px);
-}
-@media screen  {
-    
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .inbox {
+        flex-direction: row; /* Side by side on larger screens */
+        justify-content: space-between; /* Space between elements */
+        padding-left:40px; /* Padding adjustment for larger screens */
+        padding-right:40px; /* Padding adjustment for larger screens */
+        margin-top:20px; /* Margin adjustment for larger screens */
+        margin-bottom:20px; /* Margin adjustment for larger screens */
+        height:auto; /* Allow height to adjust based on content */
+        align-items:center; /* Center items vertically */
+    }
+
+    .left {
+        margin-right: auto; /* Align left section properly */
+        max-width:400px; /* Limit width of left section */
+        flex-grow:1; /* Allow left section to grow */
+        text-align:left; /* Align text to the left on larger screens */
+        margin-bottom:0; /* Remove bottom margin on larger screens */
+    }
+
+    .illustration {
+        max-width:300px; /* Limit image size on larger screens */
+        height:auto; /* Maintain aspect ratio of image */
+        margin-left:auto; /* Center image if needed */
+        margin-right:auto; /* Center image if needed */ 
+   }
 }
